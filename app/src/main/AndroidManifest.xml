@@ -26,11 +26,9 @@
         <activity android:name=".ReadMore"></activity>
         <activity android:name=".DetailActivity"></activity>
 
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="reg9t+mCGFhTRW6fvhQZX0aju+0="/>
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="your api key" />
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
