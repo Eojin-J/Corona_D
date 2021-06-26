@@ -27,8 +27,8 @@ public class CameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent intent2 = new Intent(this, MainActivity.class);
+        startActivity(intent2);
 
         int permssionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
 

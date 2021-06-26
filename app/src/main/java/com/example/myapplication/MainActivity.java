@@ -129,8 +129,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void camera_btn(View view){
-        Intent intent = new Intent(this, CameraActivity.class);
-        startActivity(intent);
+        Intent intent2 = new Intent(this, CameraActivity.class);
+        startActivity(intent2);
     }
 
 }
