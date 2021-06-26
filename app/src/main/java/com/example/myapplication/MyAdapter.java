@@ -18,6 +18,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Context mContext;
     private ArrayList<item> mList;
 
+
     public  class ViewHolder extends RecyclerView.ViewHolder {
         private TextView textView_title, textView_facility, title_location, location_detail , textView_visit, textView_disinfection;
 
@@ -68,6 +69,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
 
+        int color = position % 3;
+
+        switch (color){
+            case 0:
+                System.out.println("fdssdfddffdh");
+                holder.itemView.setBackgroundResource(R.drawable.btn_green);
+                break;
+            case 1:
+                holder.itemView.setBackgroundResource(R.drawable.btn_blue);
+                break;
+            case 2:
+                holder.itemView.setBackgroundResource(R.drawable.btn_orange);
+                break;
+        }
+
 
         if (mList.get(position).getName() == ""){
             System.out.println("1111111111111111");
@@ -86,6 +102,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return 15;
+//                mList.size();
     }
 }

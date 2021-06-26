@@ -73,7 +73,7 @@
         android:textColor="#F39800"
         android:textStyle="bold"
 
-        android:text="전일대비 +"
+        android:text="전일대비 "
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/total_num"
         app:layout_constraintTop_toBottomOf="@+id/title_total" />
@@ -131,7 +131,7 @@
         android:layout_marginStart="10dp"
         android:textColor="#F39800"
         android:textStyle="bold"
-        android:text="전일대비 +"
+        android:text="전일대비 "
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/release_num"
         app:layout_constraintTop_toBottomOf="@+id/release_total" />
@@ -245,7 +245,7 @@
         android:layout_marginStart="10dp"
         android:textColor="#F39800"
         android:textStyle="bold"
-        android:text="전일대비 +"
+        android:text="전일대비 "
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/rip_num"
         app:layout_constraintTop_toBottomOf="@+id/rip_total" />

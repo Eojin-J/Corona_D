@@ -3,8 +3,11 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<item> list = new ArrayList();
+    final Bundle bundle = new Bundle();
+    TextView yesterday_num_text;
 
     //    private View itemView;
 
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        yesterday_num_text = (TextView) findViewById(R.id.yesterday_num);
 
         new Description().execute();
 //
@@ -106,6 +112,21 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            try {
+                Document doc = Jsoup.connect("https://corona.daejeon.go.kr/index.do").get();
+                String text5 = doc.select("div [class=contents dj_list] tr:nth-child(2) td:nth-child(2) strong").text();
+
+                bundle.putString("text5", text5);
+
+                Message msg = handler.obtainMessage();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
             return null;
 
         }
@@ -122,6 +143,14 @@ public class MainActivity extends AppCompatActivity {
 //            progressDialog.dismiss();
         }
     }
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            Bundle bundle = msg.getData();
+
+            yesterday_num_text.setText(bundle.getString("text5"));
+    }};
 
     public void readMoreClick(View view){
         Intent intent = new Intent(this, ReadMore.class);

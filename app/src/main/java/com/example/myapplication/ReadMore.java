@@ -14,10 +14,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class ReadMore extends AppCompatActivity {
-    private ArrayList<MoreItem> morelist = new ArrayList();
     TextView total_num, release_num, isolate_num, rip_num, total_before_num, release_before_num, isolate_before_num, rip_before_num;
     TextView baseDate;
     ImageButton callHanbat, callGwangeo, callExpo, callDong, callJung, callWestern, callYoosung, callDaedeok;
@@ -39,87 +37,6 @@ public class ReadMore extends AppCompatActivity {
         isolate_before_num = (TextView) findViewById(R.id.isolate_before_num);
         rip_before_num = (TextView) findViewById(R.id.rip_before_num);
         baseDate = (TextView) findViewById(R.id.baseDate);
-
-//        callHanbat = (ImageButton)  findViewById(R.id.callHanbat);
-//        callGwangeo = (ImageButton)  findViewById(R.id.callGwangeo);
-//        callExpo = (ImageButton)  findViewById(R.id.callExpo);
-//        callDong = (ImageButton)  findViewById(R.id.callDong);
-//        callJung = (ImageButton)  findViewById(R.id.callJung);
-//        callWestern = (ImageButton)  findViewById(R.id.callWestern);
-//        callYoosung = (ImageButton)  findViewById(R.id.callYoosung);
-//        callDaedeok = (ImageButton)  findViewById(R.id.callDaedeok);
-//
-//        callHanbat.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Korean_Tuberculosis_Association);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
-//
-//        callGwangeo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Korean_Tuberculosis_Association);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
-//
-//        callExpo.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Korean_Tuberculosis_Association);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
-//
-//        callDong.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Dong_gu_Health_Center);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
-//
-//        callJung.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Jung_gu_Health_Center);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
-//
-//        callWestern.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Western_Health_Center);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
-//
-//        callYoosung.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Yuseong_Health_Center);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
-//
-//        callDaedeok.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Num = getString(R.string.Daedeok_gu_Health_Center);
-//                Num = "tel:" + Num;
-//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-//            }
-//        });
 
         new Thread(){
             @Override
