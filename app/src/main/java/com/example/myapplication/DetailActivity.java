@@ -1,7 +1,10 @@
 package com.example.myapplication;
 
+import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,8 +18,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class DetailActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+    final Bundle bundle = new Bundle();
     TextView textView, textView_ad, textView_vs;
     Button whereBtn;
     private static final int REQUEST_CODE = 0;
@@ -54,6 +62,57 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         textView_ad.setText(address);
         textView_vs.setText(visitTime);
 
+
+        String str = textView_ad.getText().toString();
+        List<Address> addressList = null;
+        try{
+            geocoder = new Geocoder(this, Locale.getDefault());
+            addressList = geocoder.getFromLocationName(str, 1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        List<Address> finalAddressList = addressList;
+
+        new Thread(){
+            @Override
+            public void run(){
+                String []splitStr = finalAddressList.get(0).toString().split(",");
+                String address2 = splitStr[0].substring(splitStr[0].indexOf("\"") + 1, splitStr[0].length() - 2);
+
+                System.out.println("sdadsadsadsadasdsadas"+splitStr[5]+finalAddressList);
+                String latitude = splitStr[10].substring(splitStr[10].indexOf("=") + 1); //에뮬은 14, 16이고 내 폰은 10, 12
+                String longitude = splitStr[12].substring(splitStr[12].indexOf("=") + 1);
+
+//                        LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+
+                bundle.putString("latitude", latitude);
+                bundle.putString("longitude", longitude);
+                bundle.putString("address2", address2);
+
+                Message msg = handler.obtainMessage();
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+
+            }
+        }.start();}
+
+
+
+
+//        // 마커 생성
+//        MarkerOptions mOptions2 = new MarkerOptions();
+//        mOptions2.title("search result");
+////        mOptions2.snippet(address2);
+//        mOptions2.position(point);
+//        // 마커 추가
+//        mMap.addMarker(mOptions2);
+//        // 해당 좌표로 화면 줌
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point,17));
+
+
+
+
 //        whereBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -65,16 +124,11 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 //                    e.printStackTrace();
 //                }
 //
-//                System.out.println(addressList.get(0).toString());
-//
 //                String []splitStr = addressList.get(0).toString().split(",");
 //                String address = splitStr[0].substring(splitStr[0].indexOf("\"") + 1,splitStr[0].length() - 2);
-//                System.out.println(address);
 //
 //                String latitude = splitStr[10].substring(splitStr[10].indexOf("=") + 1);
 //                String longitude = splitStr[12].substring(splitStr[12].indexOf("=") + 1);
-//                System.out.println(latitude);
-//                System.out.println(longitude);
 //
 //                LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
 //                // 마커 생성
@@ -99,7 +153,30 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 //            Log.e("test","입출력 오류 - 서버에서 주소변환시 에러발생");
 //        }
 
-    }
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            Bundle bundle = msg.getData();
+
+            String latitude = bundle.getString("latitude");
+            String longitude = bundle.getString("longitude");
+            String address2 = bundle.getString("address2");
+
+            LatLng point = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
+            MarkerOptions mOptions2 = new MarkerOptions();
+            mOptions2.title("search result");
+            mOptions2.snippet(address2);
+            mOptions2.position(point);
+        // 마커 추가
+            mMap.addMarker(mOptions2);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point,17));
+
+        }
+    };
+
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

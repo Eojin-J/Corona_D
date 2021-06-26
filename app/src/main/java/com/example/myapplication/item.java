@@ -9,7 +9,7 @@ public class item {
     private String visitTime2;
     private String disinfection;
 
-    public item(String title, String facility, String name, String address, String visitTime,String visitTime2, String disinfection){
+    public item(String title, String facility, String name, String address, String visitTime, String visitTime2, String disinfection){
         this.title = title;
         this.facility = facility;
         this.name = name;
@@ -37,8 +37,8 @@ public class item {
     public String getVisitTime2(){
         return visitTime2;
     }
-    public String getDisinfection() {
-        return disinfection;
+    public String getAddress2() {
+        return address;
     }
 
 }

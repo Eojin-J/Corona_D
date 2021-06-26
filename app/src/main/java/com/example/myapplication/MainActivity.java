@@ -7,14 +7,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -35,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
     final Bundle bundle = new Bundle();
     TextView yesterday_num_text;
-    Button camera_Btn;
+//    Button camera_Btn;
+//
+//    private int ACTIVITY_REQUEST_CODE = 1;
+//
+//    static TessBaseAPI sTess;
 
-    private int ACTIVITY_REQUEST_CODE = 1;
-
-    static TessBaseAPI sTess;
 
 
     @Override
@@ -134,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
             return null;
 
-            
+
         }
 
 
@@ -162,6 +160,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ReadMore.class);
         startActivity(intent);
     }
+
+
 
 
 
