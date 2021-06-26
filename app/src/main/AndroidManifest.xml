@@ -29,7 +29,7 @@
             tools:ignore="Instantiatable"></activity>
         <activity android:name="DetailActivity"
             tools:ignore="Instantiatable"></activity>
-        <activity android:name=".CameraActivity"
+        <activity android:name=".CameraView"
             tools:ignore="Instantiatable"></activity>
         <activity android:name=".HospitalActivity"
             tools:ignore="Instantiatable"></activity>

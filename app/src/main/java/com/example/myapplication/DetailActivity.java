@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.view.View;
@@ -142,7 +143,8 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
 //    }
 
     public void backBtn(View view){
-        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 

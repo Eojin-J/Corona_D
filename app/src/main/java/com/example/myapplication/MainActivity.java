@@ -7,11 +7,14 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.googlecode.tesseract.android.TessBaseAPI;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -26,10 +29,18 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<item> list = new ArrayList();
+
+    private String datapath = "";
+    private String lang = "";
+
     final Bundle bundle = new Bundle();
     TextView yesterday_num_text;
+    Button camera_Btn;
 
-    //    private View itemView;
+    private int ACTIVITY_REQUEST_CODE = 1;
+
+    static TessBaseAPI sTess;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,20 +54,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         yesterday_num_text = (TextView) findViewById(R.id.yesterday_num);
 
+
         new Description().execute();
-//
-//        itemView.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//
-//                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-//                startActivity(intent);
-//
-//                return false;
-//            }
-//        });
 
     }
+
+
+
+
 
     private class Description extends AsyncTask<Void, Void, Void> {
 
@@ -129,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             return null;
 
+            
         }
 
 
@@ -157,10 +163,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void camera_btn(View view){
-        Intent intent2 = new Intent(this, CameraActivity.class);
-        startActivity(intent2);
-    }
 
 
 
