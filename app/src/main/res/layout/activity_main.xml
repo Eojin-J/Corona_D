@@ -23,109 +23,13 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="2dp">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/camera_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="2dp">
-            <TextView
-                android:id="@+id/text_total"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="전일 확진자"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:background="#3CADCA"/>
-            <TextView
-                android:id="@+id/text_total2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="20 명"
-                android:textAlignment="center"
-                android:textColor="#3CADCA"
-                android:background="#E2EDF6"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="2dp">
-            <TextView
-                android:id="@+id/text_release"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="전일 격리 해제 수"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:background="#3CADCA"/>
-            <TextView
-                android:id="@+id/text_release2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="0 명"
-                android:textAlignment="center"
-                android:textColor="#3CADCA"
-                android:background="#E2EDF6"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="2dp">
-            <TextView
-                android:id="@+id/text_quarantine"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="현재 격리 인원"
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:background="#3CADCA"/>
-            <TextView
-                android:id="@+id/text_quarantine2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="19 명"
-                android:textAlignment="center"
-                android:textColor="#3CADCA"
-                android:background="#E2EDF6"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="2dp">
-            <TextView
-                android:id="@+id/text_death"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="사망자 수 "
-                android:textAlignment="center"
-                android:textColor="#ffffff"
-                android:background="#3CADCA"/>
-            <TextView
-                android:id="@+id/text_death2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1 명"
-                android:textAlignment="center"
-                android:textColor="#3CADCA"
-                android:background="#E2EDF6" />
-        </LinearLayout>
+            android:text="카메라"
+            android:textSize="20dp"
+            android:onClick="camera_btn"/>
 
     </LinearLayout>
 
@@ -140,29 +44,5 @@
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="btn1"/>
 
-    <!--    <EditText-->
-<!--        android:id="@+id/textView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="53dp"-->
-<!--        android:layout_marginStart="5dp"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_marginEnd="60dp"-->
-<!--        android:text="TextView"-->
-<!--        android:textSize="25dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/imageButton"-->
-<!--        android:layout_width="55dp"-->
-<!--        android:layout_height="53dp"-->
-<!--        android:layout_marginStart="5dp"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:layout_marginEnd="5dp"-->
-<!--        android:background="@drawable/loupe"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/textView"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

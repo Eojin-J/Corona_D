@@ -29,12 +29,15 @@
             tools:ignore="Instantiatable"></activity>
         <activity android:name="DetailActivity"
             tools:ignore="Instantiatable"></activity>
+        <activity android:name=".CameraActivity"
+            tools:ignore="Instantiatable"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="your api key" />
+            android:value="AIzaSyBFGnxENHffx0hrP4gg2NJwjGD4ncJi8pA" />
 
     </application>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
