@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -25,10 +24,9 @@ public class CameraActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
-        Intent intent2 = new Intent(this, MainActivity.class);
-        startActivity(intent2);
 
         int permssionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
 

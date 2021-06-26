@@ -19,14 +19,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private ArrayList<item> mList;
 
     public  class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView_title, textView_facility, textView_name, textView_address , textView_visit, textView_disinfection;
+        private TextView textView_title, textView_facility, title_location, location_detail , textView_visit, textView_disinfection;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             textView_title = (TextView) itemView.findViewById(R.id.textView_title);
             textView_facility =  (TextView) itemView.findViewById(R.id.textView_facility);
-            textView_name = (TextView) itemView.findViewById(R.id.textView_name);
+            title_location = (TextView) itemView.findViewById(R.id.title_location);
             textView_visit = (TextView) itemView.findViewById(R.id.textView_visit);
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +75,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         else {
             holder.textView_title.setText(String.valueOf(mList.get(position).getTitle()));
             holder.textView_facility.setText(String.valueOf(mList.get(position).getFacility()));
-            holder.textView_name.setText(String.valueOf(mList.get(position).getName()));
+            holder.title_location.setText(String.valueOf(mList.get(position).getName()));
 
             holder.textView_visit.setText(String.valueOf(mList.get(position).getVisitTime()));
 

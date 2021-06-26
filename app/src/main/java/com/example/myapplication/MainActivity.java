@@ -23,7 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<item> list = new ArrayList();
-//    private View itemView;
+
+    //    private View itemView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-
                 Log.d("debug :", "List " + mElementDataSize);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void btn1(View view){
+    public void readMoreClick(View view){
         Intent intent = new Intent(this, ReadMore.class);
         startActivity(intent);
     }
@@ -132,5 +132,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent2 = new Intent(this, CameraActivity.class);
         startActivity(intent2);
     }
+
+
 
 }

@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 
 public class ReadMore extends AppCompatActivity {
     private ArrayList<MoreItem> morelist = new ArrayList();
-    TextView read_Moretext1, read_Moretext2, read_Moretext3, read_Moretext4, read_Moretext5, read_Moretext6, read_Moretext7, read_Moretext8;
+    TextView total_num, release_num, isolate_num, rip_num, total_before_num, release_before_num, isolate_before_num, rip_before_num;
     TextView baseDate;
     ImageButton callHanbat, callGwangeo, callExpo, callDong, callJung, callWestern, callYoosung, callDaedeok;
     final Bundle bundle = new Bundle();
@@ -29,97 +28,98 @@ public class ReadMore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_readmore);
-        read_Moretext1 = (TextView) findViewById(R.id.read_Moretext1);
-        read_Moretext2 = (TextView) findViewById(R.id.read_Moretext2);
-        read_Moretext3 = (TextView) findViewById(R.id.read_Moretext3);
-        read_Moretext4 = (TextView) findViewById(R.id.read_Moretext4);
 
-        read_Moretext5 = (TextView) findViewById(R.id.read_Moretext5);
-        read_Moretext6 = (TextView) findViewById(R.id.read_Moretext6);
-        read_Moretext7 = (TextView) findViewById(R.id.read_Moretext7);
-        read_Moretext8 = (TextView) findViewById(R.id.read_Moretext8);
+        total_num = (TextView) findViewById(R.id.total_num);
+        release_num = (TextView) findViewById(R.id.release_num);
+        isolate_num = (TextView) findViewById(R.id.isolate_num);
+        rip_num = (TextView) findViewById(R.id.rip_num);
+
+        total_before_num = (TextView) findViewById(R.id.total_before_num);
+        release_before_num = (TextView) findViewById(R.id.release_before_num);
+        isolate_before_num = (TextView) findViewById(R.id.isolate_before_num);
+        rip_before_num = (TextView) findViewById(R.id.rip_before_num);
         baseDate = (TextView) findViewById(R.id.baseDate);
 
-        callHanbat = (ImageButton)  findViewById(R.id.callHanbat);
-        callGwangeo = (ImageButton)  findViewById(R.id.callGwangeo);
-        callExpo = (ImageButton)  findViewById(R.id.callExpo);
-        callDong = (ImageButton)  findViewById(R.id.callDong);
-        callJung = (ImageButton)  findViewById(R.id.callJung);
-        callWestern = (ImageButton)  findViewById(R.id.callWestern);
-        callYoosung = (ImageButton)  findViewById(R.id.callYoosung);
-        callDaedeok = (ImageButton)  findViewById(R.id.callDaedeok);
-
-        callHanbat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Korean_Tuberculosis_Association);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
-
-        callGwangeo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Korean_Tuberculosis_Association);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
-
-        callExpo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Korean_Tuberculosis_Association);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
-
-        callDong.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Dong_gu_Health_Center);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
-
-        callJung.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Jung_gu_Health_Center);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
-
-        callWestern.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Western_Health_Center);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
-
-        callYoosung.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Yuseong_Health_Center);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
-
-        callDaedeok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Num = getString(R.string.Daedeok_gu_Health_Center);
-                Num = "tel:" + Num;
-                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
-            }
-        });
+//        callHanbat = (ImageButton)  findViewById(R.id.callHanbat);
+//        callGwangeo = (ImageButton)  findViewById(R.id.callGwangeo);
+//        callExpo = (ImageButton)  findViewById(R.id.callExpo);
+//        callDong = (ImageButton)  findViewById(R.id.callDong);
+//        callJung = (ImageButton)  findViewById(R.id.callJung);
+//        callWestern = (ImageButton)  findViewById(R.id.callWestern);
+//        callYoosung = (ImageButton)  findViewById(R.id.callYoosung);
+//        callDaedeok = (ImageButton)  findViewById(R.id.callDaedeok);
+//
+//        callHanbat.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Korean_Tuberculosis_Association);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
+//
+//        callGwangeo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Korean_Tuberculosis_Association);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
+//
+//        callExpo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Korean_Tuberculosis_Association);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
+//
+//        callDong.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Dong_gu_Health_Center);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
+//
+//        callJung.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Jung_gu_Health_Center);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
+//
+//        callWestern.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Western_Health_Center);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
+//
+//        callYoosung.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Yuseong_Health_Center);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
+//
+//        callDaedeok.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Num = getString(R.string.Daedeok_gu_Health_Center);
+//                Num = "tel:" + Num;
+//                startActivity(new Intent("android.intent.action.DIAL", Uri.parse(Num)));
+//            }
+//        });
 
         new Thread(){
             @Override
@@ -168,17 +168,27 @@ public class ReadMore extends AppCompatActivity {
             Bundle bundle = msg.getData();
             baseDate.setText(bundle.getString("base"));
 
-            read_Moretext1.setText(bundle.getString("total"));
-            read_Moretext2.setText(bundle.getString("text2"));
-            read_Moretext3.setText(bundle.getString("text3"));
-            read_Moretext4.setText(bundle.getString("text4"));
+            total_num.setText(bundle.getString("total"));
+            release_num.setText(bundle.getString("text2"));
+            isolate_num.setText(bundle.getString("text3"));
+            rip_num.setText(bundle.getString("text4"));
 
-            read_Moretext5.setText(bundle.getString("text5"));
-            read_Moretext6.setText(bundle.getString("text6"));
-            read_Moretext7.setText(bundle.getString("text7"));
-            read_Moretext8.setText(bundle.getString("text8"));
+            total_before_num.setText(bundle.getString("text5"));
+            release_before_num.setText(bundle.getString("text6"));
+            isolate_before_num.setText(bundle.getString("text7"));
+            rip_before_num.setText(bundle.getString("text8"));
 
         }
     };
+
+    public void hospitalBtn(View view){
+        Intent intent = new Intent(this, HospitalActivity.class);
+        startActivity(intent);
+    }
+
+    public void backBtn(View view){
+        finish();
+    }
+
 
 }
