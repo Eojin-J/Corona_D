@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/location_detail"
         app:layout_constraintVertical_bias="0.0"
-        tools:context=".DetailActivity" />
+        tools:context="com.podata.projectD.DetailActivity" />
 
     <TextView
         android:id="@+id/title_time"
