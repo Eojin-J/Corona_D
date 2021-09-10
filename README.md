@@ -23,5 +23,9 @@ Android Studio 전공 과목 최종 프로젝트 <br />
   확진자 동선 위치를 지도에서 확인하고 싶다면 구글 클라우드 플랫폼에 가입하고 자신의 키를 활용하세요. <br />
   
 ## 스크린샷 & 시현 영상 <br />
-
+![KakaoTalk_20210910_213419919_04](https://user-images.githubusercontent.com/84311622/132855006-52b5e65d-9a9f-4470-bac9-35c9e9bef5ae.jpg)
+![KakaoTalk_20210910_213419919](https://user-images.githubusercontent.com/84311622/132855012-16578510-4a6a-4552-9541-7c8c0d32de71.jpg)
+![KakaoTalk_20210910_213419919_01](https://user-images.githubusercontent.com/84311622/132855014-8a28d450-c055-4d24-b427-b9cb5341e9b0.jpg)
+![KakaoTalk_20210910_213419919_02](https://user-images.githubusercontent.com/84311622/132855016-acc54bb1-4b31-4802-8ed2-8980784ee13d.jpg)
+![KakaoTalk_20210910_213419919_03](https://user-images.githubusercontent.com/84311622/132855017-0883f8d1-71a0-439b-a42a-ec0956e7768c.jpg)
 
