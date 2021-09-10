@@ -41,6 +41,9 @@ public class ReadMore extends AppCompatActivity {
             public void run(){
                 Document doc = null;
                 try {
+                    SSLConnect ssl = new SSLConnect();
+                    ssl.postHttps("https://corona.daejeon.go.kr/index.do?menuId=0008",1000,1000);
+
                     doc = Jsoup.connect("https://corona.daejeon.go.kr/index.do").get();
                     String baseDate = doc.select("div [class=contents] h3:nth-child(1) span:nth-child(2)").text();
                     String total = doc.select("div [class=contents dj_list] tr:nth-child(1) td:nth-child(2) strong").text();

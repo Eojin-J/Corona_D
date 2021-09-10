@@ -76,7 +76,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull MyAdapter.ViewHolder holder, int position) {
 
         int color = position % 3;
-
+        System.out.println("테스트");
         switch (color){
             case 0:
                 holder.itemView.setBackgroundResource(R.drawable.btn_green);
@@ -100,6 +100,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
+        System.out.println("리스트크기"+mList.size());
         return mList.size();
 //
     }

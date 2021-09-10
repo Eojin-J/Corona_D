@@ -50,9 +50,7 @@ public class MainActivity extends AppCompatActivity {
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-
-
-        Intent intent = new Intent(this, LoadingActivity.class);
+        Intent intent = new Intent(this, LoadingActivity.class); //로딩시작
         startActivity(intent);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
@@ -129,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
         protected Void doInBackground(Void... params) {
 
             try {
+                SSLConnect ssl = new SSLConnect();
+                ssl.postHttps("https://corona.daejeon.go.kr/index.do?menuId=0008",1000,1000);
                 Document doc = Jsoup.connect("https://corona.daejeon.go.kr/index.do?menuId=0008").get();
                 Elements mElementDataSize = doc.select("table[class=corona]").select("tr");
 
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                     String disinfection = elem.select("tr td:nth-child(6)  p").text();
 
 
-
+                    System.out.println(address);
                     if(!name.equals("") && !name.contains("역학조사"))
                         list.add(new item(district, facility, name, address, visitTime, visitTime2, disinfection));
                 }
@@ -172,7 +172,6 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Void result) {
-
             MyAdapter myAdapter = new MyAdapter(getApplicationContext(),list);
             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
             recyclerView.setLayoutManager(layoutManager);

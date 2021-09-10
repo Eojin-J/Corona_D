@@ -270,7 +270,6 @@
         android:layout_margin="10dp"
         android:layout_marginBottom="4dp"
         android:background="@drawable/btn_kobus"
-        android:elevation="15dp"
         android:text="선별 진료소 알아보기"
         android:textColor="#000000"
         android:textSize="30sp"

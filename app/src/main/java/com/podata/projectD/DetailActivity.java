@@ -119,8 +119,9 @@ public class DetailActivity extends AppCompatActivity implements OnMapReadyCallb
         LatLng hanbat = new LatLng(36.350806, 127.300621);
         mMap.addMarker(new MarkerOptions()
                 .position(hanbat)
-                .title("Marker in Hanbat"));
+                .title("Marker"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hanbat, 16));
+
     }
 
     public void backBtn(View view){
