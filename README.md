@@ -1,4 +1,4 @@
-# Corona Information in Daejeon
+# 대전광역시 코로나 알리미
 Android Studio 전공 과목 최종 프로젝트 <br />
 - 이메일 주소 : ej2b514@gmail.com <br />
 - 블로그 주소 :  <br />
